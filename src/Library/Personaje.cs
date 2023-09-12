@@ -6,12 +6,14 @@ namespace Program{
     public abstract class Personaje{
         public string Name { get; set;}
         public string Category { get; set;}
-        public int Health { get; set;}
+        public int Initial_health { get; set;}
+        public int Current_health { get; set;}
         public List<Item> Items { get; set; }
 
-        public Personaje(string name, string category, int health){
+        public Personaje(string name, string category, int initial_health, int current_health){
             Name = name;
-            Health = health;
+            Initial_health = initial_health;
+            Current_health = current_health;
             Category = category;
             Items = new List<Item>();
         }

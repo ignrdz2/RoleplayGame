@@ -1,7 +1,9 @@
+using System;
+
 namespace Program;
 
 public class Wizard : Personaje{
-    public Wizard(string name, int health) : base(name, "Wizard", health){
+    public Wizard(string name, int Initial_health, int Current_health) : base(name, "Wizard", Initial_health, Current_health){
 
     }
     public override int CalculateTotalAttack(){
@@ -23,7 +25,9 @@ public class Wizard : Personaje{
     }   
     public override void Attack(Personaje target, int damage)
     {
-        throw new System.NotImplementedException();
+        Console.WriteLine(target.Current_health);
+        target.Current_health -= damage;
+        Console.WriteLine($"{target} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health}");
     }
     public override void Heal()
     {
