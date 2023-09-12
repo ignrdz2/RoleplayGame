@@ -27,10 +27,13 @@ public class Wizard : Personaje{
     {
         Console.WriteLine(target.Current_health);
         target.Current_health -= damage;
-        Console.WriteLine($"{target} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health}");
+        Console.WriteLine($"{target.Name} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health}");
+        //Falta poder saber por quien fue atacado el target
     }
-    public override void Heal()
+    public override void Heal(Personaje target)
     {
-        throw new System.NotImplementedException();
+        target.Current_health = target.Initial_health;
+        Console.WriteLine($"{target.Name} ha sido curado! | Vida: {target.Current_health}");
+        //Falta poder saber por quien fue curado el target
     }
 }

@@ -21,7 +21,7 @@ namespace Program{
         public abstract int CalculateTotalAttack();
         public abstract int CalculateTotalDefense();
         public abstract void Attack(Personaje target, int damage);
-        public abstract void Heal();
+        public abstract void Heal(Personaje target);
 
 
 

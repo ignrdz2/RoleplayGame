@@ -1,3 +1,5 @@
+using System;
+
 namespace Program
 {
   public class Enano : Personaje
@@ -28,12 +30,16 @@ namespace Program
 
     public override void Attack(Personaje target, int damage)
     {
-      // Implementa la lógica de ataque
+      target.Current_health -= damage;
+      Console.WriteLine($"{target.Name} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health}");
+      //Falta poder saber por quien fue atacado el target
     }
 
-    public override void Heal()
+    public override void Heal(Personaje target)
     {
-      // Implementa la lógica de curación
+      target.Current_health = target.Initial_health;
+      Console.WriteLine($"{target.Name} ha sido curado! | Vida: {target.Current_health}");
+      //Falta poder saber por quien fue curado el target
     }
   }
 }

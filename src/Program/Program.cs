@@ -32,7 +32,12 @@ namespace Program
             int Enano_totalDefense = enano.CalculateTotalDefense();
             //
 
+            // vvvvvvvvvv
+            //Falta sacar el damage de cada item para al atacar indicar el item y no el damage directamente
+            // ^^^^^^^^^^
+            wizard.Attack(elfo, 20); // 
             wizard.Attack(elfo, 20);
+            wizard.Heal(elfo);
 
 
             Console.WriteLine($"{wizard.Name} | Vida: {wizard.Current_health} - Total Attack: {Wizard_totalAttack}, Total Defense: {Wizard_totalDefense}");
