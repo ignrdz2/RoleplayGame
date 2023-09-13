@@ -49,6 +49,11 @@ namespace Program
             System.Console.WriteLine("COMIENZA LA BATALLA");
             System.Threading.Thread.Sleep(500);
 
+            Console.WriteLine("+-----------------------+");
+            Console.WriteLine("|+---------------------+|");
+            Console.WriteLine("||     PROXIMAMENTE    ||");
+            Console.WriteLine("|+---------------------+|");
+            Console.WriteLine("+-----------------------+");
 
 
 
