@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Program;
 
 namespace Program
@@ -7,7 +8,6 @@ namespace Program
   {
 
     public static Personaje CreateCharacter()
-
     {
       Console.WriteLine("Seleccione el tipo de personaje:");
       Console.WriteLine("1. Mago");
@@ -43,6 +43,27 @@ namespace Program
       }
 
       return personaje;
+    }
+
+    public static void AddItem(Personaje personaje)
+    {
+      Console.WriteLine("Ingrese el nombre del item:");
+      string itemName = Console.ReadLine().ToLower().Trim();
+
+      Console.WriteLine("Ingrese el ataque del item:");
+      int itemAttack = Convert.ToInt32(Console.ReadLine());
+
+      Console.WriteLine("Ingrese la defensa del item:");
+      int itemDefense = Convert.ToInt32(Console.ReadLine());
+
+      Item item = new Item(itemName, itemAttack, itemDefense);
+      personaje.Items.Add(item);
+    }
+
+    public static void ShowCharacters(List<Personaje> personajes)
+    {
+      foreach (var item in personajes)
+        Console.WriteLine($"Nombre: {item.Name} | Tipo: {item.Category} | Vida: {item.Current_health} | Ataque: {item.CalculateTotalAttack()} | Defensa: {item.CalculateTotalDefense()}");
     }
   }
 }
