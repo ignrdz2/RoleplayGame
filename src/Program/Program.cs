@@ -10,6 +10,10 @@ namespace Program
             wizard.Items.Add(new Item("Palo", 20, 10));
             wizard.Items.Add(new Item("Libro", 0, 15));
 
+            SpellBook spellBook = new SpellBook();
+            Spell BolaDeFuego = new Spell("Bola de Fuego", 33, 2, "Fuego");
+            spellBook.AddSpell(BolaDeFuego);
+
             int Wizard_totalAttack = wizard.CalculateTotalAttack();
             int Wizard_totalDefense = wizard.CalculateTotalDefense();
             //
@@ -39,6 +43,10 @@ namespace Program
             wizard.Attack(elfo, 20);
             wizard.Heal(elfo);
 
+            wizard.UseSpell(BolaDeFuego, elfo, spellBook);
+            Spell RayoLetal = new Spell("Rayo Letal", 24, 2, "rayo");
+            spellBook.AddSpell(RayoLetal);
+            wizard.UseSpell(RayoLetal, enano, spellBook);
 
             Console.WriteLine($"{wizard.Name} | Vida: {wizard.Current_health} - Total Attack: {Wizard_totalAttack}, Total Defense: {Wizard_totalDefense}");
         }
