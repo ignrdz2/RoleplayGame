@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using Program;
 
 namespace Program
@@ -62,6 +63,8 @@ namespace Program
 
     public static void ShowCharacters(List<Personaje> personajes)
     {
+      string json = JsonSerializer.Serialize(personajes);
+      // Console.WriteLine(json);
       foreach (var item in personajes)
         Console.WriteLine($"Nombre: {item.Name} | Tipo: {item.Category} | Vida: {item.Current_health} | Ataque: {item.CalculateTotalAttack()} | Defensa: {item.CalculateTotalDefense()}");
     }
