@@ -24,7 +24,7 @@ namespace Program
     public class SpellBook
     {
         public List<Spell> spellsAvailable = new List<Spell>();
-        public void AddSpell(Spell spell)
+        public void AddSpell(Spell spell) // Aprender un hechizo
         {
             spellsAvailable.Add(spell);
             Console.WriteLine($"Se ha agregado el hechizo {spell.Name}");
