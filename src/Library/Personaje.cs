@@ -11,6 +11,7 @@ namespace Program
         public int Initial_health { get; set; }
         public int Current_health { get; set; }
         public List<Item> Items { get; set; }
+        public Dictionary<Type, object> SpecificItems { get; set; }
 
         public Personaje(string name, string category, int initial_health, int current_health)
         {
@@ -19,6 +20,8 @@ namespace Program
             Current_health = current_health;
             Category = category;
             Items = new List<Item>();
+            SpecificItems = new Dictionary<Type, object>(); /* Sirve para que algunas clases no puedan tener cosas de las otras
+            Por ejemplo, ninguna clase puede tener un SpellBook excepto los magos */
         }
 
         public virtual int CalculateTotalAttack()
