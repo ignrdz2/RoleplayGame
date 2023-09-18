@@ -35,6 +35,23 @@ namespace Program
       Assert.AreEqual(90, elfo.Current_health);
     }
 
+    [Test]
+    public void TestAttack()
+    {
+      Personaje mago = new Wizard("Axeloncio", 100, 100);
+      Personaje enano = new Enano("Pedrozo", 45, 60);
+      mago.Attack(enano, 20);
+      Assert.AreEqual(40, enano.Current_health);
+    }
+
+    [Test]
+    public void TestHeal()
+    {
+      Personaje mago = new Wizard("Axeloncio", 100, 60);
+      mago.Heal(mago);
+      Assert.AreEqual(100, mago.Current_health);
+    }
+
   }
 
 }
