@@ -46,14 +46,14 @@ namespace Program
         }
         public virtual void Attack(Personaje target, int damage)
         {
-            Console.WriteLine(target.Current_health);
+            // Console.WriteLine(target.Current_health);
             target.Current_health -= damage;
-            Console.WriteLine($"{target.Name} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health}");
+            Console.WriteLine($" ----- {target.Name} fue atacado con {damage} de damage, su vida ahora es de {target.Current_health} -----");
             //Falta poder saber por quien fue atacado el target
         }
         public virtual void Heal(Personaje target)
         {
-            target.Current_health = target.Initial_health;
+            // target.Current_health = target.Initial_health;
             Console.WriteLine($"{target.Name} ha sido curado! | Vida: {target.Current_health}");
             //Falta poder saber por quien fue curado el target
         }

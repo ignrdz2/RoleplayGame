@@ -33,6 +33,7 @@ namespace Program
             //Items:
             gebau.Items.Add(new Item("Hacha", 8, 1));
             gebau.Items.Add(new Item("Escudo", 0, 5));
+            //Calculo de ataque y defensa
             Console.WriteLine("El ataque total de gebau es: {0}", gebau.CalculateTotalAttack());
             Console.WriteLine("La defensa de gebau es: {0}", gebau.CalculateTotalDefense());
 
@@ -41,6 +42,9 @@ namespace Program
 
             //Ataque de juani a axeloncio
             juani.UseSpell(DarkLight, axeloncio, grimorio2);
+
+            //Ataque de juancho a gebau
+            juancho.Attack(gebau, juancho.CalculateTotalAttack());
 
 
         }
