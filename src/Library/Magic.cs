@@ -27,7 +27,7 @@ namespace Program
         public void AddSpell(Spell spell) // Aprender un hechizo
         {
             spellsAvailable.Add(spell);
-            Console.WriteLine($"Se ha agregado el hechizo {spell.Name}");
+            // Console.WriteLine($"Se ha agregado el hechizo {spell.Name}");
         }
 
         public Spell GetSpellByName(string name) // Lo usas para checkear si el hechizo está en el grimorio
