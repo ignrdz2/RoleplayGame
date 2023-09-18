@@ -14,9 +14,9 @@ public class Wizard : Personaje
     }
     public virtual void UseSpell(Spell spell, Personaje target, SpellBook spellBook)
     {
-        if (HaveSpellBook())
+        if (HaveSpellBook() && SpecificItems[typeof(SpellBook)] == spellBook)
         {
-            if (spellBook.spellsAvailable != null && spell.Uses > 0)
+            if (spellBook.spellsAvailable != null && spell.Uses > 0 && spellBook.spellsAvailable.Contains(spell))
             {
                 Console.WriteLine($"{Name} ha usado el hechizo {spell.Name} de elemento {spell.Element}!.");
                 spell.Uses--;
@@ -27,6 +27,14 @@ public class Wizard : Personaje
             {
                 Console.WriteLine($"Has gastado tu hechizo {spell.Name}!");
             }
+            else
+            {
+                Console.WriteLine($"{Name} no tiene el hechizo {spell.Name} en su grimorio!");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"{Name} no tiene un grimorio, o no puede usar un grimorio ajeno!");
         }
     }
 }

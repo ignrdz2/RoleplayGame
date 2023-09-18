@@ -22,5 +22,4 @@ namespace Program
       Assert.AreEqual(80, victima.Current_health);
     }
   }
-
 }

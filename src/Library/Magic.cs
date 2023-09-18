@@ -34,5 +34,20 @@ namespace Program
         {
             return spellsAvailable.FirstOrDefault(spell => spell.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
+
+        public void DefaultSpells() // Crear un set con hechizos predeterminados
+        {
+            spellsAvailable.Add(new Spell("Fireball", 50, 3, "Fire"));
+            spellsAvailable.Add(new Spell("Icebolt", 40, 3, "Ice"));
+            spellsAvailable.Add(new Spell("Thunderbolt", 60, 3, "Thunder"));
+        }
+
+        public void ShowSpells()
+        {
+            for (int i = 0; i < spellsAvailable.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {spellsAvailable[i].Name} - {spellsAvailable[i].Element} - {spellsAvailable[i].Damage} - {spellsAvailable[i].Uses}");
+            }
+        }
     }
 }
