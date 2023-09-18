@@ -8,7 +8,7 @@ public class Wizard : Personaje
     public Wizard(string name, int Initial_health, int Current_health) : base(name, "Wizard", Initial_health, Current_health)
     {
     }
-    public bool HaveSpellBook()
+    private bool HaveSpellBook()
     {
         return (SpecificItems.ContainsKey(typeof(SpellBook)));
     }
